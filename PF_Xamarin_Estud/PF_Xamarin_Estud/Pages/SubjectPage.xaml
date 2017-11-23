@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PF_Xamarin_Estud.SubjectPage">
+
+    
+    <ContentPage Title="Información General">
+        <ContentPage.Content>
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="labelSubjectInfoTitle" FontSize="Large" TextColor="Red" HorizontalOptions="FillAndExpand"></Label>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Mis Calificaciones">
+        <ContentPage.Content>
+            <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="layoutMain" Orientation="Vertical">
+                    
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Compañeros">
+        <ListView x:Name="listviewPartners">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding FullName}" Detail="{Binding Email}" ></TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+</TabbedPage>
