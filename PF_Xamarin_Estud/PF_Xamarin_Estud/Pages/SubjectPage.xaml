@@ -4,17 +4,19 @@
              x:Class="PF_Xamarin_Estud.SubjectPage">
 
     
-    <ContentPage Title="Información General">
+    <ContentPage Title="Información" Icon="ic_custom_informacion.png">
         <ContentPage.Content>
-            <StackLayout Orientation="Vertical">
-                <Label x:Name="labelSubjectInfoTitle" FontSize="Large" TextColor="Red" HorizontalOptions="FillAndExpand"></Label>
+            <StackLayout Orientation="Vertical" Margin="15">
+                <Label Text="Profesor" FontSize="Large" TextColor="Red" HorizontalOptions="FillAndExpand"></Label>
+                <Label Text="{Binding ProfessorFullName}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="StartAndExpand"
+                       Margin="0,15,0,0"></Label>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
 
-    <ContentPage Title="Mis Calificaciones">
+    <ContentPage Title="Notas" Icon="ic_custom_evaluaciones.png">
         <ContentPage.Content>
-            <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="15">
                 <StackLayout x:Name="layoutMain" Orientation="Vertical">
                     
                 </StackLayout>
@@ -22,8 +24,8 @@
         </ContentPage.Content>
     </ContentPage>
 
-    <ContentPage Title="Compañeros">
-        <ListView x:Name="listviewPartners">
+    <ContentPage Title="Compañeros" Icon="ic_custom_estudiante.png">
+        <ListView x:Name="listviewPartners" Margin="15">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding FullName}" Detail="{Binding Email}" ></TextCell>

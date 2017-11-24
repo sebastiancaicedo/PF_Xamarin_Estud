@@ -8,9 +8,9 @@
             <StackLayout x:Name="layoutTop" Orientation="Vertical" VerticalOptions="StartAndExpand">
                 <Entry x:Name="entryEmail" Placeholder="example@uninorte.edu.co"></Entry>
                 <Entry x:Name="entryPassword" Placeholder="Contraseña" IsPassword="True"></Entry>
-                <Button Text="Sign In" Clicked="LogIn"></Button>
+                <Button Text="Sign In" BackgroundColor="#D32F2F" TextColor="White" Clicked="LogIn"></Button>
             </StackLayout>
-            <ActivityIndicator x:Name="loadIndicator" VerticalOptions="CenterAndExpand" Color="DodgerBlue"></ActivityIndicator>
+            <ActivityIndicator x:Name="loadIndicator" VerticalOptions="CenterAndExpand"></ActivityIndicator>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

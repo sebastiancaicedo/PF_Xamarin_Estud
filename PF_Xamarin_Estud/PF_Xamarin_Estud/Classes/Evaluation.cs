@@ -10,15 +10,17 @@ namespace PF_Xamarin_Estud
         public string SubjectKey { get; private set; }
         public string RubricKey { get; private set; }
         public bool IsCompleted { get; private set; }
+        public string Status { get; private set; }
         public IList<Calification> Califications { get; private set; }
 
-        public Evaluation(string name, string subjectKey, string rubricKey, IList<Calification> califications, bool isCompleted)
+        public Evaluation(string name, string subjectKey, string rubricKey, bool isCompleted, string status, IList<Calification> califications)
         {
             Name = name;
             SubjectKey = subjectKey;
             RubricKey = rubricKey;
-            Califications = califications;
             IsCompleted = isCompleted;
+            Status = status;
+            Califications = califications;
         }
 
         public class Calification

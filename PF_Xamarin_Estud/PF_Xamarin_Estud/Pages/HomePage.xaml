@@ -5,10 +5,22 @@
     
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Margin="15">
-            <ListView x:Name="listviewSubjects" ItemTapped="ShowSubjectInfo">
+            <ListView x:Name="listviewSubjects" ItemTapped="ShowSubjectInfo"
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsRefreshing}"
+                      RefreshCommand="{Binding RefreshCommand}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" Detail="{Binding ProfessorFullName}"></TextCell>
+                        <ViewCell Height="70">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Image Source="ic_custom_asignaturas.png" VerticalOptions="CenterAndExpand"></Image>
+                                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="15,0,0,0">
+                                    <Label Text="{Binding Name}" TextColor="Red" FontSize="Large"></Label>
+                                    <Label Text="{Binding ProfessorFullName}" FontSize="Small"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

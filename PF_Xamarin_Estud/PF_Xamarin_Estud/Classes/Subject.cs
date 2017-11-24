@@ -12,11 +12,13 @@ namespace PF_Xamarin_Estud
         public List<string> StudentsKeys { get; private set; } = new List<string>();
         public List<string> EvaluationsKeys { get; private set; } = new List<string>();
 
-        public Subject(string name, string professorFullName, string professorId)
+        public Subject(string name, string professorFullName, string professorId, List<string> studentsKeys, List<string> evaluationsKeys)
         {
             Name = name;
             ProfessorId = professorId;
             ProfessorFullName = professorFullName;
+            StudentsKeys = studentsKeys;
+            EvaluationsKeys = evaluationsKeys;
         }
     }
 }

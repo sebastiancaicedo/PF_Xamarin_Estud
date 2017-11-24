@@ -12,17 +12,17 @@ namespace PF_Xamarin_Estud
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SubjectPage : TabbedPage
 	{
-        private Subject Subject { get; set; }
+        private Subject TheSubject { get; set; }
         private IList<Student> Partners { get; set; }
         private IList<Evaluation> Evaluations { get; set; }
         private bool appeared = false;
 
 		public SubjectPage (Subject subject)
 		{
-            this.Subject = subject;
-            Title = "Asignatura: " + Subject.Name;
-			InitializeComponent ();
-            labelSubjectInfoTitle.Text = "Profesor: " + Subject.ProfessorFullName;
+            TheSubject = subject;
+            Title = "Asignatura: " + TheSubject.Name;
+            InitializeComponent();
+            BindingContext = TheSubject;
 		}
 
         protected async override void OnAppearing()
@@ -32,9 +32,9 @@ namespace PF_Xamarin_Estud
             {
                 try
                 {
-                    Partners = await FirebaseHelper.GetStudentsByIds(Subject.StudentsKeys);
+                    Partners = await FirebaseHelper.GetStudentsByIds(TheSubject.StudentsKeys);
                     listviewPartners.ItemsSource = Partners;
-                    Evaluations = await FirebaseHelper.GetEvaluations(Subject.EvaluationsKeys);
+                    Evaluations = await FirebaseHelper.GetEvaluations(TheSubject.EvaluationsKeys);
                     SetUpMyCalifications();
                 }
                 catch (Exception ex)
